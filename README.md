@@ -14,7 +14,7 @@ To modify configurations for the Flask application, you can make changes in the 
 
 To run this project locally, follow these steps:
 
-Clone this repository to your local machine:git clone <repository_url>
+Clone this repository to your local machine:git clone <https://github.com/sarahanjum12/Add-Text-To-Videos.git>
 pip install flask moviepy
 
 Usage
