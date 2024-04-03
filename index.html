@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Animated Text To Videos with Style</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <img src="{{ url_for('static', filename='images/download.png') }}" class="logo" alt="Logo">
+
+            <ul> 
+                <li><a href="#">Video Editor Guide</a></li>
+            </ul>
+            <button class="btn"><img src="{{ url_for('static', filename='images/icon.png') }}" alt="Edit Icon">Edit</button>
+        </nav>
+
+        <div class="content">
+            <h1>Video Editor</h1>
+            <p class="subtitle">Add and customize texts into your videos</p>
+        </div>
+
+        <form action="/process_video" method="post" enctype="multipart/form-data">
+            <div class="middle">
+                <label for="video-upload" class="btn-file">
+                    <img src="{{ url_for('static', filename='images/icon.png') }}" alt="File Icon">Choose File
+                </label>
+                <input type="file" id="video-upload" name="video" accept="video/mp4">
+            </div>
+            <div class="text-bar">
+                <textarea name="text" placeholder="Enter text..."></textarea>
+            </div>
+            
+            <div class="sidebar">
+                <div class="options-box">
+                    <label for="font-select">Font:</label>
+                    <img src="{{ url_for('static', filename='images/font.png') }}" alt="Font Icon">
+                    <select id="font-select" name="font">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Tahoma">Tahoma</option>
+                        <option value="Calibri">Calibri</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Lucida Console">Lucida Console</option>
+                        <option value="Open Sans">Open Sans</option>
+                        <option value="Roboto">Roboto</option>
+                        <option value="Montserrat">Montserrat</option>
+                        <option value="Lato">Lato</option>
+                    </select>
+                </div>
+
+                <div class="options-box">
+                    <label for="style-select">Style:</label>
+                    <img src="{{ url_for('static', filename='images/style.png') }}" alt="Style Icon">
+                    <select id="style-select" name="style">
+                        <option value="normal">Normal</option>
+                        <option value="italic">Italic</option>
+                        <option value="bold">Bold</option>
+                        <option value="normal">Normal</option>
+                        <option value="bold italic">Bold Italic</option>
+                        <option value="underline">Underline</option>
+                        <option value="line-through">Line Through</option>
+                        <option value="overline">Overline</option>
+                        <option value="uppercase">Uppercase</option>
+                        <option value="lowercase">Lowercase</option>
+                        <option value="capitalize">Capitalize</option>
+                    </select>
+                </div>
+
+                <div class="options-box">
+                    <label for="color-select">Color:</label>
+                    <img src="{{ url_for('static', filename='images/color.png') }}" alt="Color Icon">
+                    <input type="color" id="color-select" name="color" value="#ffffff">
+                </div>
+
+                <div class="options-box">
+                    <label for="animation-input">Animation:</label>
+                    <img src="{{ url_for('static', filename='images/animation.png') }}" alt="Animation Icon">
+                    <input type="text" id="animation-input" name="animation" placeholder="Enter animation details...">
+                </div>
+            </div>
+
+            <div>
+                <input type="submit" value="Add Text" class="submit-btn">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
