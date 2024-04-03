@@ -1,95 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Animated Text To Videos with Style</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <title>CodePen - nice-forms.css</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      background-color: #caf0f8;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <img src="{{ url_for('static', filename='images/download.png') }}" class="logo" alt="Logo">
+  <div class="demo-page">
+    <main class="demo-page-content">
+      <section>
+        <h1 class="package-name">Video Editor</h1>
+        <p>
+          Add and customize texts into your videos
+        </p>
+        <form action="/process_video" method='POST' enctype="multipart/form-data">
+        <div class="nice-form-group">
+          <label>File upload:</label>
+          <input type="file" id="video-upload" name="video" accept="video/mp4">
 
-            <ul> 
-                <li><a href="#">Video Editor Guide</a></li>
-            </ul>
-            <button class="btn"><img src="{{ url_for('static', filename='images/icon.png') }}" alt="Edit Icon">Edit</button>
-        </nav>
-
-        <div class="content">
-            <h1>Video Editor</h1>
-            <p class="subtitle">Add and customize texts into your videos</p>
         </div>
 
-        <form action="/process_video" method="post" enctype="multipart/form-data">
-            <div class="middle">
-                <label for="video-upload" class="btn-file">
-                    <img src="{{ url_for('static', filename='images/icon.png') }}" alt="File Icon">Choose File
-                </label>
-                <input type="file" id="video-upload" name="video" accept="video/mp4">
-            </div>
-            <div class="text-bar">
-                <textarea name="text" placeholder="Enter text..."></textarea>
-            </div>
-            
-            <div class="sidebar">
-                <div class="options-box">
-                    <label for="font-select">Font:</label>
-                    <img src="{{ url_for('static', filename='images/font.png') }}" alt="Font Icon">
-                    <select id="font-select" name="font">
-                        <option value="Arial">Arial</option>
-                        <option value="Times New Roman">Times New Roman</option>
-                        <option value="Helvetica">Helvetica</option>
-                        <option value="Verdana">Verdana</option>
-                        <option value="Georgia">Georgia</option>
-                        <option value="Tahoma">Tahoma</option>
-                        <option value="Calibri">Calibri</option>
-                        <option value="Courier New">Courier New</option>
-                        <option value="Impact">Impact</option>
-                        <option value="Lucida Console">Lucida Console</option>
-                        <option value="Open Sans">Open Sans</option>
-                        <option value="Roboto">Roboto</option>
-                        <option value="Montserrat">Montserrat</option>
-                        <option value="Lato">Lato</option>
-                    </select>
-                </div>
+        <div class="nice-form-group">
+          <label>Textarea</label>
+          <textarea name="text" placeholder="Enter text..."></textarea>
 
-                <div class="options-box">
-                    <label for="style-select">Style:</label>
-                    <img src="{{ url_for('static', filename='images/style.png') }}" alt="Style Icon">
-                    <select id="style-select" name="style">
-                        <option value="normal">Normal</option>
-                        <option value="italic">Italic</option>
-                        <option value="bold">Bold</option>
-                        <option value="normal">Normal</option>
-                        <option value="bold italic">Bold Italic</option>
-                        <option value="underline">Underline</option>
-                        <option value="line-through">Line Through</option>
-                        <option value="overline">Overline</option>
-                        <option value="uppercase">Uppercase</option>
-                        <option value="lowercase">Lowercase</option>
-                        <option value="capitalize">Capitalize</option>
-                    </select>
-                </div>
+        </div>
 
-                <div class="options-box">
-                    <label for="color-select">Color:</label>
-                    <img src="{{ url_for('static', filename='images/color.png') }}" alt="Color Icon">
-                    <input type="color" id="color-select" name="color" value="#ffffff">
-                </div>
+        <div class="nice-form-group">
+          <label>Font:</label>
+          <select name="font">
+            <option>Please select a Font</option>
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Calibri">Calibri</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Impact">Impact</option>
+            <option value="Lucida Console">Lucida Console</option>
+            <option value="Open Sans">Open Sans</option>
+            <option value="Roboto">Roboto</option>
+            <option value="Montserrat">Montserrat</option>
+            <option value="Lato">Lato</option>
+          </select>
+        </div>
 
-                <div class="options-box">
-                    <label for="animation-input">Animation:</label>
-                    <img src="{{ url_for('static', filename='images/animation.png') }}" alt="Animation Icon">
-                    <input type="text" id="animation-input" name="animation" placeholder="Enter animation details...">
-                </div>
-            </div>
+        <div class="nice-form-group">
+          <label>Style:</label>
+          <select name="style">
+            <option>Please select a Style</option>
+            <option value="normal">Normal</option>
+            <option value="italic">Italic</option>
+            <option value="bold">Bold</option>
+            <option value="normal">Normal</option>
+            <option value="bold italic">Bold Italic</option>
+            <option value="underline">Underline</option>
+            <option value="line-through">Line Through</option>
+            <option value="overline">Overline</option>
+            <option value="uppercase">Uppercase</option>
+            <option value="lowercase">Lowercase</option>
+            <option value="capitalize">Capitalize</option>
+          </select>
+        </div>
 
-            <div>
-                <input type="submit" value="Add Text" class="submit-btn">
-            </div>
+        <div class="nice-form-group">
+          <label>Color:</label>
+          <input type="color" name="color">
+        </div>
+
+        <div class="nice-form-group">
+          <label>Animation:</label>
+          <input type="text" id="animation-input" name="animation" placeholder="Enter animation details...">
+        </div>
+        <details>
+            <summary>
+              <div class="toggle-code">
+                <input type="submit" value="Add Text">
+              </div>
+            </summary>
+        </details>
         </form>
-    </div>
+        
+        
+    
+
+
+      </section>
+      <footer>Add Text To Videos</footer>
+    </main>
+  </div>
 </body>
 </html>
