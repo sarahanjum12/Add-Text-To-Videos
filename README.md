@@ -4,6 +4,7 @@ Add Text-To-Videos
 This project allows users to add customized text to videos with various animation effects. It uses Flask as the backend framework and Moviepy library for video editing. Users can upload a video file, specify text content, font style, text color, and choose from a variety of animation effects to apply to the text overlay.
 
 Installation
+
 ImageMagick is a powerful open-source software suite used for displaying, converting, and editing raster image and vector image files. In this project, ImageMagick is utilized for applying various animation effects to text overlays in videos.
 
 To install ImageMagick on your system, follow the instructions provided on the official website.
